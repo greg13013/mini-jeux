@@ -1,0 +1,62 @@
+.square:active, .square:focus{
+  background-color: white;
+  transition: 0s;
+}
+
+.bg-cornflowerblue{
+  background-color: cornflowerblue;
+}
+
+.levelSuivant{
+  animation: levelSuivant 500ms;
+}
+
+.failLevel{
+  animation: failLevel 500ms
+}
+
+#containerSquare{
+  height: 500px;
+}
+
+.square{
+  background-color: blue;
+  width: 30%;
+  height: 132px;
+  border: solid 8px;
+  border-radius: 16px;
+  margin-right: 16px;
+  margin-top: 16px;
+  cursor: pointer;
+  transition: 200ms ease-in-out;
+}
+
+@keyframes levelSuivant {
+  0%{
+    filter: brightness(100%);
+    //background-color:cornflowerblue;
+  }
+  50%{
+    filter: brightness(150%);
+    //background-color: white;
+  }
+  100%{
+    filter: brightness(100%);
+    //background-color: cornflowerblue;
+  }
+}
+@keyframes failLevel {
+  0%{
+    //background-color:red;
+    filter: brightness(100%);
+  }
+  50%{
+
+    background-color: indianred;
+    filter: brightness(150%);
+  }
+  100%{
+    background-color: cornflowerblue;
+    filter: brightness(100%);
+  }
+}

@@ -1,0 +1,25 @@
+<h1 class="text-center">Level {{level}}</h1>
+
+
+
+
+<div class="row justify-content-center">
+  <div id="containerSquare" class="col-12 bg-cornflowerblue">
+    <div class="text-center mb-3" *ngIf="!start">
+      <button type="button" mdbBtn gradient="blue"  class="z-depth-1a waves-light col-6" mdbWavesEffect (click)="startPartie()">Commencer</button>
+    </div>
+
+
+      <div class="row justify-content-center " *ngIf="start">
+
+
+        <div class="col-lg-4 col d-flex flex-wrap">
+          <div *ngFor="let square of [0,1,2,3,4,5,6,7,8]; let index = index" [id]="index" class="square" (click)="idBloc(index.toString())">
+
+          </div>
+        </div>
+      </div>
+
+  </div>
+</div>
+

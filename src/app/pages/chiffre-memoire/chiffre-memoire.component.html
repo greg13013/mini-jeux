@@ -1,0 +1,59 @@
+
+<div class="row justify-content-center">
+  <div class="col-6">
+
+    <h1>Level {{level}}</h1>
+<!--    Temp : {{temp}}s-->
+    <div class="progress" *ngIf="loader">
+      <div class="progress-bar" role="progressbar" [style]="'width:' + temp  +'%'"  aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <div class="text-center mb-3" *ngIf="!start">
+      <button type="button" mdbBtn gradient="blue" class="z-depth-1a waves-light btn-block" (click)="startGame()" mdbWavesEffect>Commencer</button>
+    </div>
+
+    <div *ngIf="loader">
+      <h2>Chiffre à retenir</h2>
+      <div>
+        <h3>{{tabResultat[level-1]}}</h3>
+      </div>
+    </div>
+
+
+
+    <form [formGroup]="form" (ngSubmit)="submit()" novalidate *ngIf="start && !loader && !afficherResultat">
+
+      <div class="md-form">
+        <input type="text" id="chiffre" class="form-control" formControlName="chiffre" mdbInput>
+        <label for="chiffre">Chiffre</label>
+      </div>
+
+      <div class="text-center mb-3">
+        <button type="submit" mdbBtn gradient="blue"  class="z-depth-1a waves-light btn-block" mdbWavesEffect>Envoyer</button>
+      </div>
+
+    </form>
+
+
+    <div *ngIf="afficherResultat">
+      <h2>Chiffre à retenir</h2>
+      <h3>{{tabResultat[level-1]}}</h3>
+      <h2>Chiffre entrée</h2>
+      <h3>{{tabUtilisateur[level-1].chiffre}}</h3>
+      <div *ngIf="gagner">
+        Gagner !
+        <div class="text-center mb-3">
+          <button type="submit" mdbBtn gradient="blue"  class="z-depth-1a waves-light btn-block" (click)="startGame()" mdbWavesEffect>Continuer</button>
+        </div>
+      </div>
+      <div *ngIf="!gagner">
+        Perdu !
+        <div class="text-center mb-3">
+          <button type="submit" mdbBtn gradient="red"  class="z-depth-1a waves-light btn-block" (click)="reset()" mdbWavesEffect>Reessayer</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
