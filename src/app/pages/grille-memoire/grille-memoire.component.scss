@@ -31,6 +31,12 @@
   transition: 200ms ease-in-out;
 }
 
+@media (max-width: 510px) {
+  .square{
+    width: 28%;
+  }
+}
+
 @keyframes levelSuivant {
   0%{
     filter: brightness(100%);
