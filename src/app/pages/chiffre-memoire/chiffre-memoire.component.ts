@@ -41,8 +41,8 @@ export class ChiffreMemoireComponent implements OnInit {
   loaderInterval(){
     this.loader = true;
     const loader = interval(25).subscribe((valeur) => {
-      // console.log(valeur);
-      this.temp += 1;
+      console.log(valeur);
+      this.temp = valeur;
       if (this.temp === 100) {
         loader.unsubscribe();
         this.loader = false;

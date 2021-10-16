@@ -5,7 +5,7 @@
     <h1>Level {{level}}</h1>
 <!--    Temp : {{temp}}s-->
     <div class="progress" *ngIf="loader">
-      <div class="progress-bar" role="progressbar" [style]="'width:' + temp  +'%'"  aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+      <div class="progress-bar" role="progressbar" [style]="'width:' + temp  +'%'" aria-valuemin="0" aria-valuemax="100">{{temp}}</div>
     </div>
 
     <div class="text-center mb-3" *ngIf="!start">
